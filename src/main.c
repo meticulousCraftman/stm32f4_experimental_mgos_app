@@ -2,7 +2,7 @@
 
 static void timer_cb(void *arg)
 {
-    // Write your code here
+    LOG(LL_INFO, ("This is working!!!!"));
     (void)arg;
 }
 
