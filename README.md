@@ -1,4 +1,4 @@
-# A blank Mongoose OS app
+# Experimental app for STM32F446RE
 
 ## Build Command
 
