@@ -1,14 +1,25 @@
-# Experimental app for STM32F446RE
+# Mongoose OS App on STM32F446RE
 
 ## Todo
   - How to build [mongoose-os-libs/mbedtls](https://github.com/mongoose-os-libs/mongoose) for STM32F446RE
   - How to build [mongoose-os-libs/mongoose](https://github.com/mongoose-os-libs/mbedtls) for STM32F446RE
 
 ## How to create a fw.zip?
-
-Enter the following command:
+Clone this project
+```console
+foo@bar:~$ git clone https://github.com/meticulousCraftman/stm32f4_experimental_mgos_app.git
+ Project cloned to your disk...
 ```
-$ mos build --local --platform stm32 --verbose --lib "zz_boards:boards" --board NUCLEO-F446RE --binary-libs-dir "binary_libs" --no-libs-update --clean --build-image "meticulouscraftman/stm32-build:r19"
+Initialize git submodules
+```console
+foo@bar:~/stm32f4_experimental_mgos_app $ git submodule init
+foo@bar:~/stm32f4_experimental_mgos_app $ git submodule update
+```
+
+Build the project
+```console
+foo@bar~$ mos build --local --platform stm32 --verbose --lib "zz_boards:boards" --board NUCLEO-F446RE --binary-libs-dir "binary_libs" --no-libs-update --clean --build-image "meticulouscraftman/stm32-build:r19"
+  mos tool builds your project...
 ```
 
 What needs to be replaced:
