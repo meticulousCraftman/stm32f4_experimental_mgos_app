@@ -18,8 +18,26 @@ foo@bar:~/stm32f4_experimental_mgos_app $ git submodule update
 
 Build the project
 ```console
-foo@bar~$ mos build --local --platform stm32 --verbose --lib "zz_boards:boards" --board NUCLEO-F446RE --binary-libs-dir "binary_libs" --no-libs-update --clean --build-image "meticulouscraftman/stm32-build:r19"
+foo@bar:~ $ mos build --local --platform stm32 --verbose --lib "zz_boards:boards" --board NUCLEO-F446RE --binary-libs-dir "binary_libs" --no-libs-update --clean --build-image "meticulouscraftman/stm32-build:r19" --repo "mongoose-os-x"
   mos tool builds your project...
+```
+
+
+Before you can start flashing your chip, on linux you need to install some tools. The 
+[st-link flash tool](https://github.com/stlink-org/stlink). I need to use this tool because 
+the normal `mos flash` tool is unable to detect my board's existence.
+```console
+foo@bar:~ $ sudo apt-get install stlink-tools
+```
+This toolchain would install 3 executables on your system:
+  - **st-flash**
+  - **st-info**
+  - **st-util**
+
+
+Flash you app to STM32F446RE
+```console
+foo@bar:~ $ mos flash --stm32-stflash-path "/usr/bin/st-flash"
 ```
 
 What needs to be replaced:
